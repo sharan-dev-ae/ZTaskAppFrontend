@@ -15,7 +15,7 @@ function Home() {
     <div>
       <div style={{ padding: "20px" }}>
         <h1
-          style={{ fontSize: "24px", fontWeight: "bold", marginBottom: "16px" }}
+          style={{ fontSize: "25px", fontWeight: "bold", marginBottom: "16px" }}
         >
           User Table
         </h1>
