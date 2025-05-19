@@ -1,12 +1,16 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Table from "../components/table";
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchUsers } from "../redux/user/userSlice";
 
 function Home() {
-  const tableData = [
-    { id: 1, name: "John Doe", email: "john@example.com" },
-    { id: 2, name: "Jane Smith", email: "jane@example.com" },
-    { id: 3, name: "Jack Black", email: "jack@example.com" },
-  ];
+  const dispatch = useDispatch();
+  const { users, loading, error } = useSelector((state) => state.users);
+
+  useEffect(() => {
+    dispatch(fetchUsers());
+  }, []);
+
   return (
     <div>
       <div style={{ padding: "20px" }}>
@@ -15,7 +19,7 @@ function Home() {
         >
           User Table
         </h1>
-        <Table data={tableData} />
+        <Table data={users} />
       </div>
     </div>
   );
