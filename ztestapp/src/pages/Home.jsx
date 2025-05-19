@@ -17,7 +17,7 @@ function Home() {
         <h1
           style={{ fontSize: "25px", fontWeight: "bold", marginBottom: "16px" }}
         >
-          User Table
+          User Data Table
         </h1>
         <Table data={users} />
       </div>
